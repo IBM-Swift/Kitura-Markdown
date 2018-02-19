@@ -21,26 +21,26 @@
 </p>
 
 # Kitura-Markdown
-A Templating engine for Kitura that uses Markdown-based templates.
+A templating engine for Kitura that uses Markdown-based templates.
 
 ## Summary
-`Kitura-Markdown` enables a [Kitura](https://github.com/IBM-Swift/Kitura)-based server to serve HTML content generated from Markdown templates (`.md` files).
+`Kitura-Markdown` enables a [Kitura](https://github.com/IBM-Swift/Kitura) server to serve HTML content generated from Markdown templates (`.md` files).
 
 ## Markdown File
 Markdown is a lightweight markup language with plain text formatting syntax.
 
-[Mastering Markdown](https://guides.github.com/features/mastering-markdown/) provides documentation and examples on writing markdown files.
+[Mastering Markdown](https://guides.github.com/features/mastering-markdown/) provides documentation and examples on how to write Markdown files.
 
-By default the Kitura Router will look in the 'Views' folder for Markdown files with the extension '.md'.
+By default the Kitura Router will look in the `Views` folder for Markdown files with the extension `.md`.
 
 
 ## Example
-The following is an example of a server generated using `Kitura init` that serves Markdown-formatted text from a `.md` file.
+The following example takes a server generated using `kitura init` and modifies it to serve Markdown-formatted text from a `.md` file.
 
-The files which have been edited in this example, are structured as follows:
+The files which will be edited in this example, are as follows:
 
 <pre>
-ServerRepository
+&lt;ServerRepositoryName&gt;
 ├── Package.swift
 ├── Sources
 │    └── Application
@@ -49,12 +49,11 @@ ServerRepository
      └── Example.md
 </pre>
 
-The `Views` Folder and `Example.md` file will be created later on in this example, since they are not initialized by `Kitura init`.
+The `Views` folder and `Example.md` file will be created later on, since they are not initialized by `kitura init`.
 
 #### Package.swift
-Define "https://github.com/IBM-Swift/Kitura-Markdown.git" as a dependency.
-
-Add "KituraMarkdown" to the targets for Application.
+* Define "https://github.com/IBM-Swift/Kitura-Markdown.git" as a dependency.
+* Add "KituraMarkdown" to the targets for `Application`.
 
 #### Application.swift
 Inside the `Application.swift` file, add the following code to render the `Example.md` template file on the "/docs" route.
@@ -75,16 +74,14 @@ router.get("/docs") { _, response, next in
 ```
 
 #### Example.md
-Create the `Views` folder and put the following Markdown template code into a file called `Example.md` in this directory.
-
-The following template will display text containing a few Markdown examples:
+Create the `Views` folder and put the following Markdown template code into a file called `Example.md`:
 
 ```
 It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Kitura](https://github.com/IBM-Swift/Kitura) and write code examples:
 `print("Hello world!")`
 ```
 
-When the server is running, go to [http://localhost:8080/docs](http://localhost:8080/docs) to view the rendered markdown template.
+When the server is running, go to [http://localhost:8080/docs](http://localhost:8080/docs) to view the rendered Markdown template.
 
 ## License
-This library is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).
+This library is licensed under Apache 2.0. Full license text is available in [LICENSE](https://github.com/IBM-Swift/Kitura-Markdown/blob/master/LICENSE.txt).
