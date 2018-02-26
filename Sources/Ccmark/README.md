@@ -1,4 +1,4 @@
-##Instructions to update cmark
+## Instructions to update cmark
 
 * Git clone https://github.com/commonmark/cmark.git
 * cd cmark/src
@@ -13,7 +13,7 @@ cd build
 cmake ..
 ```
 * open src
-* copy any .h or .pc files into Kitura-Markdown/sources/Ccmark
+* copy any .h files into Kitura-Markdown/sources/Ccmark
 
 * open cmark.h and replace angled brackets for cmark_export.h and cmark_version.h with double quotes ("")
 
