@@ -75,7 +75,7 @@
             <h1>KituraMarkdown</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">KituraMarkdown</span><span class="p">:</span> <span class="kt">TemplateEngine</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">KituraMarkdown</span><span class="p">:</span> <span class="kt">TemplateEngine</span></code></pre>
 
                 </div>
               </div>
@@ -100,9 +100,9 @@ HTML.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14KituraMarkdownAAC13fileExtensionSSv"></a>
+                    <a name="/s:14KituraMarkdownAAC13fileExtensionSSvp"></a>
                     <a name="//apple_ref/swift/Property/fileExtension" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14KituraMarkdownAAC13fileExtensionSSv">fileExtension</a>
+                    <a class="token" href="#/s:14KituraMarkdownAAC13fileExtensionSSvp">fileExtension</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -118,7 +118,7 @@ rendered by a particular templating engine.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">fileExtension</span> <span class="o">=</span> <span class="s">"md"</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">fileExtension</span> <span class="o">=</span> <span class="s">"md"</span></code></pre>
 
                         </div>
                       </div>
@@ -145,7 +145,7 @@ rendered by a particular templating engine.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -173,7 +173,7 @@ be sent back to the client.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">render</span><span class="p">(</span><span class="nv">filePath</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">render</span><span class="p">(</span><span class="nv">filePath</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -222,6 +222,98 @@ be sent back to the client.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:14KituraMarkdownAAC6renderS2S8filePath_x4withSSSg6forKey0A14TemplateEngine16RenderingOptions_p7optionsSS12templateNametKs9EncodableRzlF"></a>
+                    <a name="//apple_ref/swift/Method/render(filePath:with:forKey:options:templateName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14KituraMarkdownAAC6renderS2S8filePath_x4withSSSg6forKey0A14TemplateEngine16RenderingOptions_p7optionsSS12templateNametKs9EncodableRzlF">render(filePath:with:forKey:options:templateName:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Take a template file in Markdown format and generate HTML format content to
+be sent back to the client.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">render</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Encodable</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">filePath</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">RenderingOptions</span><span class="p">,</span> <span class="nv">templateName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>filePath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The path of the template file in Markdown format to use
+                 when generating the content.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>with</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A value that conforms to Encodable.
+        <strong>Note:</strong> This parameter is ignored at this time.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>forKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A value used to match the Encodable values to the
+        correct variable in a template file.
+        <strong>Note:</strong> This parameter is ignored at this time.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>markdown options</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>If an Error isn&rsquo;t thrown when reading the template, a String containing
+       an HTML representation of the text marked up using Markdown.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:14KituraMarkdownAAC6renderS2S8filePath_s10DictionaryVySSypG7context0A14TemplateEngine16RenderingOptions_p7optionstKF"></a>
                     <a name="//apple_ref/swift/Method/render(filePath:context:options:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:14KituraMarkdownAAC6renderS2S8filePath_s10DictionaryVySSypG7context0A14TemplateEngine16RenderingOptions_p7optionstKF">render(filePath:context:options:)</a>
@@ -240,8 +332,8 @@ be sent back to the client.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">render</span><span class="p">(</span><span class="nv">filePath</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">],</span>
-                       <span class="nv">options</span><span class="p">:</span> <span class="kt">RenderingOptions</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">render</span><span class="p">(</span><span class="nv">filePath</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">],</span>
+                   <span class="nv">options</span><span class="p">:</span> <span class="kt">RenderingOptions</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -320,7 +412,7 @@ form of UTF-8 bytes.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">render</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">render</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -371,7 +463,7 @@ form of UTF-8 bytes.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">render</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">render</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -422,7 +514,7 @@ form of UTF-8 bytes.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">render</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">pageTemplate</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">render</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">pageTemplate</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -473,8 +565,8 @@ form of UTF-8 bytes.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">IBM</a>. All rights reserved. (Last updated: 2018-02-19)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">IBM</a>. All rights reserved. (Last updated: 2018-06-07)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
