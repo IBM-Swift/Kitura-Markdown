@@ -23,7 +23,7 @@ matrix:
       env: SWIFT_SNAPSHOT=4.1 JAZZY_ELIGIBLE=true
 
 before_install:
-  - git clone https://github.com/IBM-Swift/Package-Builder.git
+  - git clone https://github.com/IBM-Swift/Package-Builder.git -b fixes
 
 script:
   - ./Package-Builder/build-package.sh -projectDir $TRAVIS_BUILD_DIR
