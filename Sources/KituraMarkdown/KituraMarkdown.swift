@@ -19,7 +19,23 @@ import Foundation
 import Ccmark
 import KituraTemplateEngine
 
-/// Rendering options for KituraMarkdown
+/**
+ Rendering options for KituraMarkdown, allowing the HTML page template to be customized.
+
+ ### Usage Example:
+
+ ```swift
+ let markdownOptions = MarkdownOptions(pageTemplate: "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"></head><body><div><snippetInsertLocation></snippetInsertLocation></div></body></html>"))
+
+ router.add(templateEngine: KituraMarkdown())
+
+ router.get("/docs") { _, response, next in
+     try response.render("Example.md", context: [String:Any](), options: markdownOptions)
+     response.status(.OK)
+     next()
+ }
+ ```
+*/
 public struct MarkdownOptions: RenderingOptions {
     let pageTemplate: String
 
@@ -31,13 +47,27 @@ public struct MarkdownOptions: RenderingOptions {
     }
 }
 
-/// An implementation of Kitura's `TemplateEngine` protocol. In particular this templating
-/// engine takes files in Markdown (.md) format and converts them to HTML. In addition this
-/// class has some helper methods for taking Markdown formatted text and converting it to
-/// HTML.
-///
-/// - Note: Under the covers this templating engine uses the cmark C language reference
-///         implementation of Markdown.
+/**
+ An implementation of Kitura's `TemplateEngine` protocol. In particular this templating
+ engine takes files in Markdown (.md) format and converts them to HTML. In addition this
+ class has some helper methods for taking Markdown formatted text and converting it to
+ HTML.
+
+ - Note: Under the covers this templating engine uses the cmark C language reference
+         implementation of Markdown.
+
+ ### Usage Example:
+
+ ```swift
+ router.add(templateEngine: KituraMarkdown())
+
+ router.get("/docs") { _, response, next in
+     try response.render("Example.md", context: [String:Any]())
+     response.status(.OK)
+     next()
+ }
+ ```
+*/
 public class KituraMarkdown: TemplateEngine {
     /// The file extension of files in the views directory that will be
     /// rendered by a particular templating engine.
