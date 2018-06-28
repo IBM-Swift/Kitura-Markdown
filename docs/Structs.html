@@ -94,7 +94,18 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Rendering options for KituraMarkdown</p>
+                        <p>Rendering options for KituraMarkdown, allowing the HTML page template to be customized.</p>
+<h3 id='usage-example' class='heading'>Usage Example:</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">markdownOptions</span> <span class="o">=</span> <span class="kt">MarkdownOptions</span><span class="p">(</span><span class="nv">pageTemplate</span><span class="p">:</span> <span class="s">"&lt;!DOCTYPE html&gt;&lt;html lang=</span><span class="se">\"</span><span class="s">en</span><span class="se">\"</span><span class="s">&gt;&lt;head&gt;&lt;meta charset=</span><span class="se">\"</span><span class="s">UTF-8</span><span class="se">\"</span><span class="s">&gt;&lt;/head&gt;&lt;body&gt;&lt;div&gt;&lt;snippetInsertLocation&gt;&lt;/snippetInsertLocation&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"</span><span class="p">))</span>
+
+<span class="n">router</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">templateEngine</span><span class="p">:</span> <span class="kt">KituraMarkdown</span><span class="p">())</span>
+
+<span class="n">router</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"/docs"</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">next</span> <span class="k">in</span>
+    <span class="k">try</span> <span class="n">response</span><span class="o">.</span><span class="nf">render</span><span class="p">(</span><span class="s">"Example.md"</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span><span class="kt">Any</span><span class="p">](),</span> <span class="nv">options</span><span class="p">:</span> <span class="n">markdownOptions</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="nf">status</span><span class="p">(</span><span class="o">.</span><span class="kt">OK</span><span class="p">)</span>
+    <span class="nf">next</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre>
 
                         <a href="Structs/MarkdownOptions.html" class="slightly-smaller">See more</a>
                       </div>
