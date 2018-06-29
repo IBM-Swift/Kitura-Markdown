@@ -79,14 +79,16 @@
 
                 </div>
               </div>
-            <p>An implementation of Kitura&rsquo;s <code>TemplateEngine</code> protocol. In particular this templating
-engine takes files in Markdown (.md) format and converts them to HTML. In addition this
-class has some helper methods for taking Markdown formatted text and converting it to
-HTML.</p>
+            <p>A Kitura <a href="https://ibm-swift.github.io/Kitura-TemplateEngine/Protocols/TemplateEngine.html"><code>TemplateEngine</code></a>
+that enables a Kitura server to render HTML content generated from Markdown
+templates (<code>.md</code> files).</p>
+
+<p>This class also provides helper methods for converting Markdown formatted text
+from a <code>String</code> or <code>Data</code> to HTML.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    Under the covers this templating engine uses the cmark C language reference
-    implementation of Markdown.
+    Under the covers this templating engine uses the <a href="https://github.com/commonmark/cmark">cmark</a>
+    C language reference implementation of Markdown.
 
 </div>
 <h3 id='usage-example' class='heading'>Usage Example:</h3>
@@ -119,8 +121,10 @@ HTML.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The file extension of files in the views directory that will be
-rendered by a particular templating engine.</p>
+                        <p>The file extension of files that will be rendered by the KituraMarkdown
+template engine. By default, Kitura will search for these in the <code>./Views/</code>
+directory, which can be customized by setting the <a href="https://ibm-swift.github.io/Kitura/Classes/Router.html#/s:6Kitura6RouterC9viewsPathSSvp"><code>router.viewsPath</code></a>
+property.</p>
 
                       </div>
                       <div class="declaration">
@@ -147,7 +151,7 @@ rendered by a particular templating engine.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Create a <code>KituraMarkdown</code> instance</p>
+                        <p>Create a <code>KituraMarkdown</code> instance that can be registered with a Kitura router.</p>
 
                       </div>
                       <div class="declaration">
@@ -176,6 +180,11 @@ rendered by a particular templating engine.</p>
                       <div class="abstract">
                         <p>Take a template file in Markdown format and generate HTML format content to
 be sent back to the client.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if the template file cannot be read.
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -213,7 +222,7 @@ be sent back to the client.</p>
                                 <div>
                                   <p>A set of variables in the form of a Dictionary of
                 Key/Value pairs. <strong>Note:</strong> This parameter is ignored at
-                this time</p>
+                this time.</p>
                                 </div>
                               </td>
                             </tr>
@@ -222,8 +231,8 @@ be sent back to the client.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>If an Error isn&rsquo;t thrown when reading the template, a String containing
-       an HTML representation of the text marked up using Markdown.</p>
+                        <p>A String containing an HTML representation of the text marked up
+       using Markdown.</p>
                       </div>
                     </section>
                   </div>
@@ -243,6 +252,14 @@ be sent back to the client.</p>
                       <div class="abstract">
                         <p>Take a template file in Markdown format and generate HTML format content to
 be sent back to the client.</p>
+
+<p><em>Note that rendering of context is not supported at this time, and the <code>with</code>
+and <code>forKey</code> parameters are currently ignored.</em></p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if the template file cannot be read.
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -305,7 +322,9 @@ be sent back to the client.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>markdown options</p>
+                                  <p>A <code>RenderingOptions</code> used to customize the output. The
+                 HTML page template can be customized by providing an
+                 instance of <code><a href="../Structs/MarkdownOptions.html">MarkdownOptions</a></code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -314,8 +333,8 @@ be sent back to the client.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>If an Error isn&rsquo;t thrown when reading the template, a String containing
-       an HTML representation of the text marked up using Markdown.</p>
+                        <p>A String containing an HTML representation of the text marked up
+       using Markdown.</p>
                       </div>
                     </section>
                   </div>
@@ -335,6 +354,14 @@ be sent back to the client.</p>
                       <div class="abstract">
                         <p>Take a template file in Markdown format and generate HTML format content to
 be sent back to the client.</p>
+
+<p><em>Note that rendering of context is not supported at this time, and the
+<code>context</code> parameter is currently ignored.</em></p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if the template file cannot be read.
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -385,7 +412,9 @@ be sent back to the client.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>markdown options</p>
+                                  <p>A <code>RenderingOptions</code> used to customize the output. The
+                 HTML page template can be customized by providing an
+                 instance of <code><a href="../Structs/MarkdownOptions.html">MarkdownOptions</a></code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -394,8 +423,8 @@ be sent back to the client.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>If an Error isn&rsquo;t thrown when reading the template, a String containing
-       an HTML representation of the text marked up using Markdown.</p>
+                        <p>A String containing an HTML representation of the text marked up
+       using Markdown.</p>
                       </div>
                     </section>
                   </div>
@@ -413,8 +442,8 @@ be sent back to the client.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Generate HTML from a Data struct containing text marked up in Markdown in the
-form of UTF-8 bytes.</p>
+                        <p>Generate HTML content from a Data struct containing text marked up in
+Markdown in the form of UTF-8 bytes.</p>
 
                       </div>
                       <div class="declaration">
@@ -437,7 +466,7 @@ form of UTF-8 bytes.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The Data struct containing markdown text in UTF-8</p>
+                                  <p>The Data struct containing markdown text in UTF-8.</p>
                                 </div>
                               </td>
                             </tr>
@@ -465,7 +494,7 @@ form of UTF-8 bytes.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Generate HTML from a String containing text marked up in Markdown.</p>
+                        <p>Generate HTML content from a String containing text marked up in Markdown.</p>
 
                       </div>
                       <div class="declaration">
@@ -488,7 +517,7 @@ form of UTF-8 bytes.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The String containing markdown text in UTF-8</p>
+                                  <p>The String containing markdown text in UTF-8.</p>
                                 </div>
                               </td>
                             </tr>
@@ -516,7 +545,7 @@ form of UTF-8 bytes.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Generate HTML from a String containing text marked up in Markdown.</p>
+                        <p>Generate an HTML page from a String containing text marked up in Markdown.</p>
 
                       </div>
                       <div class="declaration">
@@ -539,7 +568,7 @@ form of UTF-8 bytes.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The String containing markdown in UTF-8</p>
+                                  <p>The String containing markdown in UTF-8.</p>
                                 </div>
                               </td>
                             </tr>
@@ -551,7 +580,12 @@ form of UTF-8 bytes.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The HTML page template used</p>
+                                  <p>The HTML page template to use. The page template
+                      should contain <code>&lt;snippetInsertLocation&gt;&lt;/snippetInsertLocation&gt;</code>,
+                      which will be substituted with the generated HTML
+                      content.
+                      <em>Note: If you do not wish to customize the page
+                      template, <code>&quot;default&quot;</code> can be specified.</em></p>
                                 </div>
                               </td>
                             </tr>
@@ -561,7 +595,8 @@ form of UTF-8 bytes.</p>
                       <div>
                         <h4>Return Value</h4>
                         <p>A String containing an HTML representation of the text marked up
-       using Markdown.</p>
+       using Markdown, enclosed in an HTML page corresponding to the
+       <code>pageTemplate</code> supplied.</p>
                       </div>
                     </section>
                   </div>
@@ -574,7 +609,7 @@ form of UTF-8 bytes.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">IBM</a>. All rights reserved. (Last updated: 2018-06-28)</p>
+      <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">IBM</a>. All rights reserved. (Last updated: 2018-06-29)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
