@@ -30,7 +30,7 @@ import KituraTemplateEngine
  ### Usage Example:
 
  ```swift
- let markdownOptions = MarkdownOptions(pageTemplate: "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"></head><body><div><snippetInsertLocation></snippetInsertLocation></div></body></html>"))
+ let markdownOptions = MarkdownOptions(pageTemplate: "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"></head><body><div><snippetInsertLocation></snippetInsertLocation></div></body></html>")
 
  router.add(templateEngine: KituraMarkdown())
 
