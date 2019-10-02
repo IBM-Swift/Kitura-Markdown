@@ -165,7 +165,8 @@ public class KituraMarkdown: TemplateEngine {
     /// - Returns: A String containing an HTML representation of the text marked up
     ///            using Markdown.
     public static func render(from: Data) -> String {
-        return from.withUnsafeBytes() { (bytes: UnsafePointer<Int8>) -> String in
+        return from.withUnsafeBytes() { (byteBuffer: UnsafeRawBufferPointer) -> String in
+            let bytes = byteBuffer.bindMemory(to: Int8.self).baseAddress
 
             guard let htmlBytes = cmark_markdown_to_html(bytes, from.count, 0) else { return "" }
 
